@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ExpenseTrackerApi/ExpenseTrackerApi.csproj" />
+    <Project Path="src/InventoryOrdersApi/InventoryOrdersApi.csproj" />
+    <Project Path="src/JobApplicationTrackerApi/JobApplicationTrackerApi.csproj" />
+    <Project Path="src/LearningProgressApi/LearningProgressApi.csproj" />
+    <Project Path="src/LibraryApi/LibraryApi.csproj" />
+    <Project Path="src/ServiceDeskProApi/ServiceDeskProApi.csproj" />
+    <Project Path="src/TaskTrackerApi/TaskTrackerApi.csproj" />
+    <Project Path="src/WeatherJournalApi/WeatherJournalApi.csproj" />
+  </Folder>
+</Solution>

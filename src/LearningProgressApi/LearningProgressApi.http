@@ -1,0 +1,33 @@
+@LearningProgressApi_HostAddress = http://localhost:5152
+
+GET {{LearningProgressApi_HostAddress}}/courses
+Accept: application/json
+
+###
+
+GET {{LearningProgressApi_HostAddress}}/learners/oageng@example.com/dashboard
+Accept: application/json
+
+###
+
+POST {{LearningProgressApi_HostAddress}}/enrollments
+Content-Type: application/json
+
+{
+  "courseId": 3,
+  "learnerName": "Oageng Tsumaki",
+  "learnerEmail": "oageng.tsumaki@example.com"
+}
+
+###
+
+POST {{LearningProgressApi_HostAddress}}/enrollments/1/quiz-submissions
+Content-Type: application/json
+
+{
+  "answers": {
+    "1": "POST",
+    "2": "JSON",
+    "3": "201"
+  }
+}

@@ -1,0 +1,22 @@
+@TaskTrackerApi_HostAddress = http://localhost:5199
+
+GET {{TaskTrackerApi_HostAddress}}/tasks
+Accept: application/json
+
+###
+
+GET {{TaskTrackerApi_HostAddress}}/tasks/summary
+Accept: application/json
+
+###
+
+POST {{TaskTrackerApi_HostAddress}}/tasks
+Content-Type: application/json
+
+{
+  "title": "Prepare interview notes",
+  "description": "Review C# Web API endpoints.",
+  "status": "Todo",
+  "priority": "High",
+  "dueDate": "2026-06-07"
+}

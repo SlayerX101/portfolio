@@ -1,0 +1,32 @@
+@ServiceDeskProApi_HostAddress = http://localhost:5150
+
+GET {{ServiceDeskProApi_HostAddress}}/dashboard
+Accept: application/json
+
+###
+
+GET {{ServiceDeskProApi_HostAddress}}/tickets?priority=Critical
+Accept: application/json
+
+###
+
+POST {{ServiceDeskProApi_HostAddress}}/tickets
+Content-Type: application/json
+
+{
+  "title": "Customer cannot complete booking",
+  "description": "Checkout fails after payment confirmation.",
+  "customerName": "Thabo Maseko",
+  "customerEmail": "thabo@example.com",
+  "priority": "Critical"
+}
+
+###
+
+PATCH {{ServiceDeskProApi_HostAddress}}/tickets/3/assign
+Content-Type: application/json
+
+{
+  "agentName": "Oageng",
+  "actor": "Team Lead"
+}

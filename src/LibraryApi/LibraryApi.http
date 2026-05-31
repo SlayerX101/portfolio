@@ -1,0 +1,20 @@
+@LibraryApi_HostAddress = http://localhost:5192
+
+GET {{LibraryApi_HostAddress}}/books
+Accept: application/json
+
+###
+
+GET {{LibraryApi_HostAddress}}/loans/active
+Accept: application/json
+
+###
+
+POST {{LibraryApi_HostAddress}}/books
+Content-Type: application/json
+
+{
+  "title": "C# in Depth",
+  "author": "Jon Skeet",
+  "genre": "Programming"
+}

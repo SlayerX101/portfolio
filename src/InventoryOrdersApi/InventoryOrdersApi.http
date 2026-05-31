@@ -1,0 +1,33 @@
+@InventoryOrdersApi_HostAddress = http://localhost:5151
+
+GET {{InventoryOrdersApi_HostAddress}}/products?lowStock=true
+Accept: application/json
+
+###
+
+GET {{InventoryOrdersApi_HostAddress}}/reports/sales
+Accept: application/json
+
+###
+
+POST {{InventoryOrdersApi_HostAddress}}/orders
+Content-Type: application/json
+
+{
+  "customerName": "Oageng Tsumaki",
+  "customerEmail": "oageng@example.com",
+  "lines": [
+    { "productId": 1, "quantity": 1 },
+    { "productId": 3, "quantity": 1 }
+  ]
+}
+
+###
+
+POST {{InventoryOrdersApi_HostAddress}}/products/2/stock
+Content-Type: application/json
+
+{
+  "quantityChange": 10,
+  "reason": "Supplier delivery"
+}

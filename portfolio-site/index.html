@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Oageng James Tsumaki junior C# developer portfolio with live web demos and ASP.NET Core Web API projects.">
+  <title>Oageng James Tsumaki | Junior C# Developer</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js?v=2" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Back to top">
+      <span class="brand-mark">OJ</span>
+      <span>Oageng James Tsumaki</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#lab">Live Apps</a>
+      <a href="#advanced">Advanced</a>
+      <a href="#projects">APIs</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Portfolio introduction">
+      <div class="hero-orbit" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="hero-content reveal">
+        <p class="eyebrow">Junior C# Developer</p>
+        <h1>Web APIs you can inspect, and browser demos you can actually use.</h1>
+        <p class="intro">I build practical ASP.NET Core Web API projects around real workflows: service desk tickets, inventory orders, learning progress, tasks, expenses, library loans, job applications, and weather records. The demos below let visitors try the project ideas immediately online.</p>
+        <div class="hero-actions">
+          <a class="button primary magnetic" href="#lab">Try the apps</a>
+          <a class="button secondary magnetic" href="../docs/Junior_CSharp_Developer_CV.html">Open CV</a>
+        </div>
+      </div>
+      <div class="hero-console reveal" aria-label="API preview">
+        <div class="console-top">
+          <span></span>
+          <span></span>
+          <span></span>
+          <strong>PortfolioApi.cs</strong>
+        </div>
+        <pre><code>app.MapPost("/tasks", request =&gt;
+{
+    var task = CreateTask(request);
+    return Results.Created($"/tasks/{task.Id}", task);
+});
+
+app.MapGet("/applications/stats", () =&gt;
+    Results.Ok(GetStatusSummary()));</code></pre>
+      </div>
+    </section>
+
+    <section class="metrics" aria-label="Portfolio highlights">
+      <article class="reveal">
+        <strong data-count="5">0</strong>
+        <span>Interactive apps</span>
+      </article>
+      <article class="reveal">
+        <strong data-count="60">0</strong>
+        <span>REST endpoints</span>
+      </article>
+      <article class="reveal">
+        <strong data-count="8">0</strong>
+        <span>C# API projects</span>
+      </article>
+    </section>
+
+    <section id="about" class="section about-section">
+      <div class="about-layout">
+        <div class="about-copy reveal">
+          <p class="eyebrow">About Me</p>
+          <h2>What I do</h2>
+          <p>I am a Bachelor of Software Engineering graduate based in Pretoria East, focused on becoming a strong junior C# developer. I build practical web APIs, responsive web pages, and small business systems that turn everyday workflows into cleaner digital tools.</p>
+          <p>My background connects software development with real user-facing work. I have handled digital booking systems, captured business data, supported customers, built freelance websites, and learned how important it is for software to be reliable, clear, and easy for people to use.</p>
+        </div>
+
+        <div class="passion-card reveal">
+          <span class="card-kicker">My passion</span>
+          <h3>Solving real problems with code that people can actually use.</h3>
+          <p>I enjoy backend development because it sits close to the logic of a business: rules, data, reports, user actions, and decisions. C# and ASP.NET Core interest me because they are structured, professional, and widely used in real companies.</p>
+          <div class="passion-list">
+            <span>Clean APIs</span>
+            <span>Business workflows</span>
+            <span>Useful dashboards</span>
+            <span>Reliable data</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="focus-grid reveal" aria-label="Developer focus areas">
+        <article>
+          <strong>Backend Development</strong>
+          <p>Creating REST APIs with validation, route design, business rules, reporting endpoints, and readable C# code.</p>
+        </article>
+        <article>
+          <strong>Web Development</strong>
+          <p>Designing responsive pages with HTML, CSS, JavaScript, animation, and interfaces that help users understand the system quickly.</p>
+        </article>
+        <article>
+          <strong>Support Mindset</strong>
+          <p>Using customer-facing experience to build software that solves real issues, communicates clearly, and respects the user’s time.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="lab" class="section lab-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Live App Lab</p>
+        <h2>Use the portfolio projects in the browser</h2>
+        <p>These front-end demos mirror the same workflows as the C# APIs, so visitors can test the ideas even before the backend is deployed online.</p>
+      </div>
+
+      <div class="app-shell reveal">
+        <aside class="app-tabs" aria-label="Choose live demo">
+          <button class="tab-button active" type="button" data-demo="tasks">Task Tracker</button>
+          <button class="tab-button" type="button" data-demo="expenses">Expense Tracker</button>
+          <button class="tab-button" type="button" data-demo="library">Library</button>
+          <button class="tab-button" type="button" data-demo="jobs">Job Tracker</button>
+          <button class="tab-button" type="button" data-demo="weather">Weather Journal</button>
+        </aside>
+
+        <section class="demo-panel" aria-live="polite">
+          <div class="demo-heading">
+            <div>
+              <p class="eyebrow" id="demoEyebrow">CRUD Demo</p>
+              <h3 id="demoTitle">Task Tracker</h3>
+            </div>
+            <span class="endpoint-pill" id="demoEndpoint">POST /tasks</span>
+          </div>
+
+          <form class="demo-form" id="demoForm"></form>
+
+          <div class="demo-results">
+            <div class="result-toolbar">
+              <strong id="resultTitle">Current tasks</strong>
+              <button class="ghost-button" type="button" id="resetDemo">Reset demo</button>
+            </div>
+            <div class="result-grid" id="demoResults"></div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="advanced" class="section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Advanced C# Programs</p>
+        <h2>More realistic APIs that show backend skill</h2>
+        <p>These projects are built to show the things companies ask junior developers about in interviews: layered services, DTOs, validation, business rules, audit trails, reporting, search, status workflows, and analytics.</p>
+      </div>
+
+      <div class="project-grid advanced-grid">
+        <article class="project-card feature-card reveal">
+          <div class="project-top">
+            <span class="project-number">A1</span>
+            <span class="status">Workflow</span>
+          </div>
+          <h3>Service Desk Pro API</h3>
+          <p>Ticketing system with SLA calculations, assignments, comments, status transitions, audit trails, breached-ticket filters, and dashboard metrics.</p>
+          <ul>
+            <li><code>GET /dashboard</code></li>
+            <li><code>PATCH /tickets/{id}/status</code></li>
+            <li><code>GET /tickets/{id}/audit</code></li>
+          </ul>
+          <a href="../src/ServiceDeskProApi/Program.cs">View advanced C# code</a>
+        </article>
+
+        <article class="project-card feature-card reveal">
+          <div class="project-top">
+            <span class="project-number">A2</span>
+            <span class="status">Business Rules</span>
+          </div>
+          <h3>Inventory Orders API</h3>
+          <p>Inventory and order management system with stock adjustments, order placement, VAT totals, cancellation stock release, low-stock alerts, and sales reports.</p>
+          <ul>
+            <li><code>POST /orders</code></li>
+            <li><code>POST /products/{id}/stock</code></li>
+            <li><code>GET /reports/sales</code></li>
+          </ul>
+          <a href="../src/InventoryOrdersApi/Program.cs">View advanced C# code</a>
+        </article>
+
+        <article class="project-card feature-card reveal">
+          <div class="project-top">
+            <span class="project-number">A3</span>
+            <span class="status">Analytics</span>
+          </div>
+          <h3>Learning Progress API</h3>
+          <p>Learning platform API with courses, enrollments, module completion, quiz scoring, pass rules, learner dashboards, certificates, and course performance analytics.</p>
+          <ul>
+            <li><code>POST /enrollments</code></li>
+            <li><code>POST /quiz-submissions</code></li>
+            <li><code>GET /reports/course-performance</code></li>
+          </ul>
+          <a href="../src/LearningProgressApi/Program.cs">View advanced C# code</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="section foundation-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Foundation API Projects</p>
+        <h2>The original programs behind the live demos</h2>
+        <p>These smaller APIs are intentionally focused. They prove core CRUD, filtering, validation, summaries, and clean route design before the portfolio moves into the more advanced systems above.</p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card reveal">
+          <div class="project-top">
+            <span class="project-number">01</span>
+            <span class="status">CRUD</span>
+          </div>
+          <h3>Task Tracker API</h3>
+          <p>Manage tasks with statuses, priorities, due dates, filtering, updates, deletion, and summary reporting.</p>
+          <ul>
+            <li><code>GET /tasks</code></li>
+            <li><code>POST /tasks</code></li>
+            <li><code>GET /tasks/summary</code></li>
+          </ul>
+          <a href="../src/TaskTrackerApi/Program.cs">View C# code</a>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-top">
+            <span class="project-number">02</span>
+            <span class="status">Reports</span>
+          </div>
+          <h3>Expense Tracker API</h3>
+          <p>Record expenses and generate monthly totals, averages, and category summaries for a simple budget workflow.</p>
+          <ul>
+            <li><code>GET /expenses</code></li>
+            <li><code>GET /reports/categories</code></li>
+            <li><code>GET /reports/monthly</code></li>
+          </ul>
+          <a href="../src/ExpenseTrackerApi/Program.cs">View C# code</a>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-top">
+            <span class="project-number">03</span>
+            <span class="status">Rules</span>
+          </div>
+          <h3>Library API</h3>
+          <p>Handle books, members, loans, returns, active-loan reporting, and availability rules.</p>
+          <ul>
+            <li><code>GET /books</code></li>
+            <li><code>POST /loans</code></li>
+            <li><code>POST /loans/{id}/return</code></li>
+          </ul>
+          <a href="../src/LibraryApi/Program.cs">View C# code</a>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-top">
+            <span class="project-number">04</span>
+            <span class="status">Workflow</span>
+          </div>
+          <h3>Job Application Tracker API</h3>
+          <p>Track roles, companies, application statuses, notes, follow-ups, and dashboard-style job search stats.</p>
+          <ul>
+            <li><code>GET /applications</code></li>
+            <li><code>PATCH /applications/{id}/status</code></li>
+            <li><code>GET /applications/stats</code></li>
+          </ul>
+          <a href="../src/JobApplicationTrackerApi/Program.cs">View C# code</a>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-top">
+            <span class="project-number">05</span>
+            <span class="status">Analytics</span>
+          </div>
+          <h3>Weather Journal API</h3>
+          <p>Log weather observations by city and calculate averages, humidity trends, and warmest readings.</p>
+          <ul>
+            <li><code>GET /entries</code></li>
+            <li><code>POST /entries</code></li>
+            <li><code>GET /cities/{city}/summary</code></li>
+          </ul>
+          <a href="../src/WeatherJournalApi/Program.cs">View C# code</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="section experience-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Work Experience</p>
+        <h2>Where my practical experience comes from</h2>
+        <p>My experience is not only classroom theory. I have worked with customers, digital systems, business data, and freelance client requirements, which helps me think about software from both the developer and user side.</p>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <span class="timeline-dot"></span>
+          <div>
+            <p class="timeline-meta">Bounce Inc | Current</p>
+            <h3>Contact Centre Agent</h3>
+            <p>I use digital booking systems, process customer requests, troubleshoot booking issues, capture client information, and communicate process-related information clearly to customers and team members.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <span class="timeline-dot"></span>
+          <div>
+            <p class="timeline-meta">Bounce Inc | Current</p>
+            <h3>Customer Service & Safety Coach</h3>
+            <p>I support front desk operations, guide customers, follow operating procedures, and solve user-facing problems calmly. This gives me a strong IT-support mindset for building helpful systems.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <span class="timeline-dot"></span>
+          <div>
+            <p class="timeline-meta">Tsumaki Electricians | Since 2020</p>
+            <h3>Data Capturer</h3>
+            <p>I manage invoice and company data using Excel and digital filing processes, maintain accurate records, and support small-business administration through organized information handling.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <span class="timeline-dot"></span>
+          <div>
+            <p class="timeline-meta">Independent Projects | Project-Based</p>
+            <h3>Freelance Web Developer</h3>
+            <p>I build responsive websites using HTML, CSS, and JavaScript, translate client requirements into usable pages, manage revisions, and improve layouts based on client feedback.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section split">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Skills</p>
+        <h2>Backend foundations with front-end polish</h2>
+        <p>My current portfolio combines C# backend fundamentals with the web skills needed to present and test software clearly.</p>
+      </div>
+      <div class="skill-list reveal" aria-label="Technical skills">
+        <span>C#</span>
+        <span>ASP.NET Core</span>
+        <span>Minimal APIs</span>
+        <span>REST</span>
+        <span>LINQ</span>
+        <span>JSON</span>
+        <span>JavaScript</span>
+        <span>HTML</span>
+        <span>Advanced CSS</span>
+        <span>Responsive UI</span>
+      </div>
+    </section>
+
+    <section id="cv" class="section cv-panel reveal">
+      <div>
+        <p class="eyebrow">CV</p>
+        <h2>Junior C# Developer CV</h2>
+        <p>The CV is written around practical Web API work, software engineering study, web development, data handling, and customer-facing digital support.</p>
+      </div>
+      <div class="cv-actions">
+        <a class="button primary magnetic" href="../docs/Junior_CSharp_Developer_CV.html">Printable CV</a>
+        <a class="button secondary magnetic" href="../docs/Junior_CSharp_Developer_CV.md">Markdown CV</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div>
+      <strong>Oageng James Tsumaki</strong>
+      <p>Junior C# Developer</p>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:oagengtsumakijr@gmail.com">Email</a>
+      <a href="https://github.com/your-username">GitHub</a>
+      <a href="https://linkedin.com/in/your-profile">LinkedIn</a>
+    </div>
+  </footer>
+</body>
+</html>

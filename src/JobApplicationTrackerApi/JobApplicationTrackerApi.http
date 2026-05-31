@@ -1,0 +1,23 @@
+@JobApplicationTrackerApi_HostAddress = http://localhost:5030
+
+GET {{JobApplicationTrackerApi_HostAddress}}/applications
+Accept: application/json
+
+###
+
+GET {{JobApplicationTrackerApi_HostAddress}}/applications/stats
+Accept: application/json
+
+###
+
+POST {{JobApplicationTrackerApi_HostAddress}}/applications
+Content-Type: application/json
+
+{
+  "role": "Junior Backend Developer",
+  "company": "Example Software",
+  "status": "Applied",
+  "appliedOn": "2026-06-01",
+  "followUpOn": "2026-06-08",
+  "notes": "Sent portfolio and CV."
+}

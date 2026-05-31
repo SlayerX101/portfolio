@@ -1,0 +1,23 @@
+@WeatherJournalApi_HostAddress = http://localhost:5043
+
+GET {{WeatherJournalApi_HostAddress}}/entries
+Accept: application/json
+
+###
+
+GET {{WeatherJournalApi_HostAddress}}/cities/Johannesburg/summary
+Accept: application/json
+
+###
+
+POST {{WeatherJournalApi_HostAddress}}/entries
+Content-Type: application/json
+
+{
+  "city": "Pretoria",
+  "date": "2026-06-01",
+  "temperatureC": 20.7,
+  "humidityPercent": 55,
+  "condition": "Clear",
+  "notes": "Cool morning."
+}
