@@ -75,7 +75,9 @@ Open `index.html` in a browser. The root-level `index.html`, `styles.css`, `app.
 
 The older `portfolio-site/` folder is kept as the working source copy used during local development.
 
-The website now includes a live browser app lab. Visitors can add records and test the workflows for the task tracker, expense tracker, library manager, job application tracker, and weather journal directly on the page. It also showcases the three advanced APIs above. The demos use front-end JavaScript state so the portfolio works online as a static site; when the C# APIs are hosted, the same forms can be wired to real deployed Web API endpoints.
+The website now includes two live browser labs. Visitors can add records and test the workflows for the task tracker, expense tracker, library manager, job application tracker, and weather journal directly on the page. The advanced lab also lets visitors try simulated Service Desk, Inventory Orders, and Learning Progress workflows with dashboard metrics, validation-style feedback, stock rules, SLA signals, and learner analytics.
+
+The demos use front-end JavaScript state so the portfolio works online as a static GitHub Pages site; when the C# APIs are hosted, the same forms can be wired to real deployed Web API endpoints.
 
 For local testing through a web server:
 

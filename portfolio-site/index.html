@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -6,7 +6,7 @@
   <meta name="description" content="Oageng James Tsumaki junior C# developer portfolio with live web demos and ASP.NET Core Web API projects.">
   <title>Oageng James Tsumaki | Junior C# Developer</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="app.js?v=2" defer></script>
+  <script src="app.js?v=3" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -62,7 +62,7 @@ app.MapGet("/applications/stats", () =&gt;
 
     <section class="metrics" aria-label="Portfolio highlights">
       <article class="reveal">
-        <strong data-count="5">0</strong>
+        <strong data-count="8">0</strong>
         <span>Interactive apps</span>
       </article>
       <article class="reveal">
@@ -108,7 +108,7 @@ app.MapGet("/applications/stats", () =&gt;
         </article>
         <article>
           <strong>Support Mindset</strong>
-          <p>Using customer-facing experience to build software that solves real issues, communicates clearly, and respects the user’s time.</p>
+          <p>Using customer-facing experience to build software that solves real issues, communicates clearly, and respects the userâ€™s time.</p>
         </article>
       </div>
     </section>
@@ -156,6 +156,38 @@ app.MapGet("/applications/stats", () =&gt;
         <p class="eyebrow">Advanced C# Programs</p>
         <h2>More realistic APIs that show backend skill</h2>
         <p>These projects are built to show the things companies ask junior developers about in interviews: layered services, DTOs, validation, business rules, audit trails, reporting, search, status workflows, and analytics.</p>
+      </div>
+
+      <div class="advanced-lab reveal">
+        <aside class="advanced-tabs" aria-label="Choose advanced live demo">
+          <button class="advanced-tab active" type="button" data-advanced-demo="service">Service Desk</button>
+          <button class="advanced-tab" type="button" data-advanced-demo="inventory">Inventory Orders</button>
+          <button class="advanced-tab" type="button" data-advanced-demo="learning">Learning Progress</button>
+        </aside>
+
+        <section class="advanced-panel" aria-live="polite">
+          <div class="demo-heading">
+            <div>
+              <p class="eyebrow" id="advancedEyebrow">Workflow Simulator</p>
+              <h3 id="advancedTitle">Service Desk Simulator</h3>
+            </div>
+            <span class="endpoint-pill" id="advancedEndpoint">POST /tickets</span>
+          </div>
+
+          <p class="advanced-summary" id="advancedSummary">Create support tickets, assign agents, and watch SLA pressure change in the dashboard.</p>
+
+          <div class="advanced-metrics" id="advancedMetrics"></div>
+
+          <form class="demo-form advanced-form" id="advancedForm"></form>
+
+          <div class="demo-results advanced-results-wrap">
+            <div class="result-toolbar">
+              <strong id="advancedResultTitle">Ticket queue</strong>
+              <button class="ghost-button" type="button" id="resetAdvancedDemo">Reset demo</button>
+            </div>
+            <div class="advanced-results" id="advancedResults"></div>
+          </div>
+        </section>
       </div>
 
       <div class="project-grid advanced-grid">
@@ -383,3 +415,5 @@ app.MapGet("/applications/stats", () =&gt;
   </footer>
 </body>
 </html>
+
+
