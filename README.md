@@ -1,6 +1,6 @@
 # Junior C# Developer Portfolio
 
-This workspace contains an editable junior C# developer CV, five ASP.NET Core Web API projects, and a static portfolio website that presents the work professionally.
+This workspace contains an editable junior C# developer CV, eight ASP.NET Core Web API projects, and a static portfolio website that presents the work professionally.
 
 ## Structure
 
@@ -8,7 +8,6 @@ This workspace contains an editable junior C# developer CV, five ASP.NET Core We
 junior-csharp-portfolio/
   docs/
     Junior_CSharp_Developer_CV.md
-    Junior_CSharp_Developer_CV.html
     Junior_CSharp_Developer_CV.html
   portfolio-site/
     index.html
