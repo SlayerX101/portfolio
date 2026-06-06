@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/src/">
     <Project Path="src/ExpenseTrackerApi/ExpenseTrackerApi.csproj" />
+    <Project Path="src/GreenDeskOpsApi/GreenDeskOpsApi.csproj" />
     <Project Path="src/InventoryOrdersApi/InventoryOrdersApi.csproj" />
     <Project Path="src/JobApplicationTrackerApi/JobApplicationTrackerApi.csproj" />
     <Project Path="src/LearningProgressApi/LearningProgressApi.csproj" />

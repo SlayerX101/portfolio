@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GreenDesk Ops dark theme JavaScript dashboard for a C# ASP.NET Core Web API service desk and asset operations project.">
+  <title>GreenDesk Ops | C# Web API Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="app-header">
+    <a class="brand" href="#top" aria-label="GreenDesk Ops home">
+      <span class="brand-mark">GD</span>
+      <span>
+        <strong>GreenDesk Ops</strong>
+        <small>C# Web API + JavaScript Dashboard</small>
+      </span>
+    </a>
+    <nav aria-label="Dashboard navigation">
+      <a href="#tickets">Tickets</a>
+      <a href="#assets">Assets</a>
+      <a href="#maintenance">Maintenance</a>
+      <a href="#api">API</a>
+      <a href="../">Portfolio</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Dark Blue + Green Theme</p>
+        <h1>Service desk, asset health, maintenance, and analytics in one operations dashboard.</h1>
+        <p>GreenDesk Ops is a portfolio-grade ASP.NET Core Web API project. This hosted page mirrors the API workflows with JavaScript so visitors can test the system on GitHub Pages.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#tickets">Use the dashboard</a>
+          <a class="button secondary" href="../src/GreenDeskOpsApi/Program.cs">View C# API</a>
+        </div>
+      </div>
+
+      <section class="command-panel" aria-label="API preview">
+        <div class="panel-top">
+          <span></span><span></span><span></span>
+          <strong>GreenDeskOpsApi</strong>
+        </div>
+        <pre><code>GET /dashboard
+POST /tickets
+PATCH /tickets/{id}/status
+POST /assets
+POST /maintenance</code></pre>
+      </section>
+    </section>
+
+    <section class="kpi-grid" aria-label="Dashboard metrics">
+      <article>
+        <span>Open Tickets</span>
+        <strong id="openTickets">0</strong>
+      </article>
+      <article>
+        <span>SLA Risk</span>
+        <strong id="slaRisk">0</strong>
+      </article>
+      <article>
+        <span>Assets Watch</span>
+        <strong id="assetWatch">0</strong>
+      </article>
+      <article>
+        <span>Asset Value</span>
+        <strong id="assetValue">R0</strong>
+      </article>
+    </section>
+
+    <section class="workspace">
+      <aside class="side-panel">
+        <div>
+          <p class="eyebrow">Controls</p>
+          <h2>Operations Lab</h2>
+          <p>Every form updates the dashboard state immediately, just like the API would after a successful request.</p>
+        </div>
+        <div class="control-stack">
+          <button class="mode-button active" type="button" data-mode="ticket">New Ticket</button>
+          <button class="mode-button" type="button" data-mode="asset">Register Asset</button>
+          <button class="mode-button" type="button" data-mode="maintenance">Schedule Maintenance</button>
+        </div>
+        <div class="export-box">
+          <button class="ghost-button" type="button" id="exportJson">Export JSON</button>
+          <button class="ghost-button" type="button" id="resetDemo">Reset Demo</button>
+        </div>
+      </aside>
+
+      <section class="form-panel" aria-live="polite">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow" id="formEyebrow">POST /tickets</p>
+            <h2 id="formTitle">Create a Service Ticket</h2>
+          </div>
+          <span id="formHint">SLA is calculated from priority</span>
+        </div>
+        <form id="opsForm" class="ops-form"></form>
+        <div class="toast" id="toast" role="status">Ready</div>
+      </section>
+    </section>
+
+    <section id="tickets" class="section-grid">
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">Ticket Queue</p>
+          <h2>Workflow and SLA tracking</h2>
+        </div>
+        <label class="filter-box">
+          <span>Filter</span>
+          <select id="ticketFilter">
+            <option value="all">All tickets</option>
+            <option value="risk">SLA risk</option>
+            <option value="critical">Critical only</option>
+            <option value="open">Open only</option>
+          </select>
+        </label>
+      </div>
+      <div class="ticket-grid" id="ticketGrid"></div>
+    </section>
+
+    <section id="assets" class="split-section">
+      <div class="asset-panel">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Assets</p>
+            <h2>Green IT asset register</h2>
+          </div>
+        </div>
+        <div class="asset-grid" id="assetGrid"></div>
+      </div>
+
+      <div class="chart-panel">
+        <p class="eyebrow">Analytics</p>
+        <h2>Ticket load by department</h2>
+        <div class="bar-chart" id="departmentChart"></div>
+      </div>
+    </section>
+
+    <section id="maintenance" class="split-section">
+      <div class="maintenance-panel">
+        <p class="eyebrow">Maintenance</p>
+        <h2>Planned work</h2>
+        <div class="maintenance-list" id="maintenanceList"></div>
+      </div>
+      <div class="activity-panel">
+        <p class="eyebrow">Activity</p>
+        <h2>Recent system events</h2>
+        <div class="activity-list" id="activityList"></div>
+      </div>
+    </section>
+
+    <section id="api" class="api-section">
+      <div>
+        <p class="eyebrow">Backend Source</p>
+        <h2>Real C# Web API behind the demo</h2>
+        <p>The hosted page is static JavaScript for GitHub Pages. The repository also includes the real ASP.NET Core Minimal API source with route groups, request DTOs, service-layer validation, business rules, and dashboard reports.</p>
+      </div>
+      <div class="endpoint-grid">
+        <code>GET /dashboard</code>
+        <code>GET /tickets?slaRisk=true</code>
+        <code>POST /tickets</code>
+        <code>PATCH /assets/{id}/health</code>
+        <code>POST /maintenance</code>
+        <code>PATCH /maintenance/{id}/status</code>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
