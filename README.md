@@ -1,6 +1,6 @@
 # Junior C# Developer Portfolio
 
-This workspace contains an editable junior C# developer CV, nine ASP.NET Core Web API projects, and a static portfolio website that presents the work professionally.
+This workspace contains an editable junior C# developer CV, eight ASP.NET Core Web API projects, and a static portfolio website that presents the work professionally.
 
 ## Structure
 
@@ -14,12 +14,7 @@ junior-csharp-portfolio/
     styles.css
     assets/
       api-dashboard.svg
-  greendesk-ops/
-    index.html
-    styles.css
-    app.js
   src/
-    GreenDeskOpsApi/
     ServiceDeskProApi/
     InventoryOrdersApi/
     LearningProgressApi/
@@ -34,7 +29,6 @@ junior-csharp-portfolio/
 
 | Project | Recruiter signal | Example endpoints |
 | --- | --- | --- |
-| GreenDesk Ops API | Service desk, green asset register, maintenance planning, SLA risk, dashboard analytics | `GET /dashboard`, `POST /tickets`, `PATCH /assets/{id}/health` |
 | Service Desk Pro API | SLA rules, ticket workflow, assignment, comments, audit trail, dashboard metrics | `GET /dashboard`, `PATCH /tickets/{id}/status`, `GET /tickets/{id}/audit` |
 | Inventory Orders API | Stock management, order totals, VAT, cancellation rules, low-stock alerts, sales reports | `POST /orders`, `POST /products/{id}/stock`, `GET /reports/sales` |
 | Learning Progress API | Enrollments, module completion, quiz scoring, learner dashboards, course analytics | `POST /enrollments`, `POST /quiz-submissions`, `GET /reports/course-performance` |
@@ -70,7 +64,6 @@ The APIs use in-memory lists, so data resets when the app restarts. That keeps t
 To run one of the advanced APIs:
 
 ```powershell
-dotnet run --project .\src\GreenDeskOpsApi\GreenDeskOpsApi.csproj
 dotnet run --project .\src\ServiceDeskProApi\ServiceDeskProApi.csproj
 dotnet run --project .\src\InventoryOrdersApi\InventoryOrdersApi.csproj
 dotnet run --project .\src\LearningProgressApi\LearningProgressApi.csproj
@@ -85,8 +78,6 @@ The older `portfolio-site/` folder is kept as the working source copy used durin
 The website now includes two live browser labs. Visitors can add records and test the workflows for the task tracker, expense tracker, library manager, job application tracker, and weather journal directly on the page. The advanced lab also lets visitors try simulated Service Desk, Inventory Orders, and Learning Progress workflows with dashboard metrics, validation-style feedback, stock rules, SLA signals, and learner analytics.
 
 The demos use front-end JavaScript state so the portfolio works online as a static GitHub Pages site; when the C# APIs are hosted, the same forms can be wired to real deployed Web API endpoints.
-
-GreenDesk Ops is a standalone dark blue/green dashboard hosted from `greendesk-ops/index.html`. It demonstrates the newest C# Web API project with a JavaScript service desk, asset register, maintenance workflow, charts, metrics, filtering, and JSON export.
 
 For local testing through a web server:
 
